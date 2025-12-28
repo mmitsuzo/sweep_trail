@@ -1,0 +1,75 @@
+*sweep_trail.txt*            delete spaces at the end of line.
+
+Version: 1.0
+Author: thinca-san
+License: VIM LICENSE
+
+==============================================================================
+Contents                     *sweep_trail-contents*
+
+Introduction                 |sweep_trail-introduction|
+Interface                    |sweep_trail-interface|
+  Commands                   |sweep_trail-commands|
+  Functions                  |sweep_trail-functions|
+  Key-Mappings               |sweep_trail-key-mappings|
+Customizing                  |sweep_trail-customizing|
+Change-Log                   |sweep_trail-change-log|
+
+==============================================================================
+Introduction                 *sweep_trail-introduction*
+
+*swwp_trail.vim* is the plugin that deletes spaces at the end of line.
+Once this plugin was installed, spaces at the end of line are automatically
+removed, if |g:sweep_trail#enable| is enabled. It can also be done by
+executing |:SweepTrail| command manually.
+
+Requirements:
+- Vim 7.0 or later
+
+Latest:
+https://github.com/vim-jp/vim-sweep_trail
+
+==============================================================================
+Interface                    *sweep_trail-interface*
+
+------------------------------------------------------------------------------
+Commands                     *sweep_trail-commands*
+
+:SweepTrail                  *:SweepTrail*
+                             Delete all spaces at the end of line in the
+                             buffer.
+------------------------------------------------------------------------------
+Functions                    *sweep_trail-functions*
+
+sweep_trail#sweep()          *sweep_trail#sweep()*
+                             The function of the command |:SweepTrail|
+
+------------------------------------------------------------------------------
+Key-Mappings                 *sweep_trail-key-mappings*
+
+<Plug>(sweep_trail)          *<Plug>(sweep_trail)*
+                             Execute |:SweepTrail|.
+
+                             *g:sweep_trail_no_default_mappings*
+The following key mappings are not defined if it has been already defined or
+g:sweep_trail_no_default_key_mappings is set to 1.
+
+{lhs}                        {rhs}
+----------                   -------------------
+<Leader>sw                   <Plug>(sweep_trail)
+
+==============================================================================
+Customizing                  *sweep_trail-customizing*
+
+g:sweep_trail#enable         *g:sweep_trail#enable*
+If this value is not 0, |:SweepTrail| is automatically executed just before
+the file was saved. The default value is 1.
+
+==============================================================================
+Change-Log                   *sweep_trail-change-log*
+
+1.0                          2014-08-01
+                             - The initial version.
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
