@@ -12,7 +12,7 @@ if !exists('g:swwp_trail#enable')
 endif
 
 function! sweep_trail#sweep()
-  %substitute/\s\+$//
+  %substitute/\s\+$//e
 endfunction
 
 function! sweep_trail#auto_sweep()
