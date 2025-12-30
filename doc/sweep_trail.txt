@@ -20,8 +20,8 @@ Introduction                 *sweep_trail-introduction*
 
 *swwp_trail.vim* is the plugin that deletes spaces at the end of line.
 Once this plugin was installed, spaces at the end of line are automatically
-removed, if |g:sweep_trail#enable| is enabled. It can also be done by
-executing |:SweepTrail| command manually.
+removed, if |g:sweep_trail#enable| is enabled (set to non-zero value). It can 
+also be done by executing |:SweepTrail| command manually.
 
 Requirements:
 - Vim 7.0 or later
@@ -37,12 +37,14 @@ Commands                     *sweep_trail-commands*
 
 :SweepTrail                  *:SweepTrail*
                              Delete all spaces at the end of line in the
-                             buffer.
+                             buffer by calling the function 
+			     |sweep_trail#sweep()|.
+
 ------------------------------------------------------------------------------
 Functions                    *sweep_trail-functions*
 
 sweep_trail#sweep()          *sweep_trail#sweep()*
-                             The function of the command |:SweepTrail|
+                             The command |:SweepTrail| calls this function.
 
 ------------------------------------------------------------------------------
 Key-Mappings                 *sweep_trail-key-mappings*
@@ -62,8 +64,8 @@ g:sweep_trail_no_default_key_mappings is set to 1.
 Customizing                  *sweep_trail-customizing*
 
 g:sweep_trail#enable         *g:sweep_trail#enable*
-If this value is not 0, |:SweepTrail| is automatically executed just before
-the file was saved. The default value is 1.
+If this value is non-zero value, |:SweepTrail| is automatically executed just 
+before the file was saved. The default value is 1.
 
 ==============================================================================
 Change-Log                   *sweep_trail-change-log*
