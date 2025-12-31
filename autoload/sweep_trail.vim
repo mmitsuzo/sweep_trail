@@ -7,16 +7,19 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-if !exists('g:swwp_trail#enable')
-  let g:sweep_trail#enable = 1
-endif
-
 function! sweep_trail#sweep()
-  %substitute/\s\+$//e
+  let save_cursor = getpos('.')
+  let save_last_search = getreg('/')
+  try
+    %substitute/\s\+$//e
+  finally
+    call setpos('.', save_cursor)
+    call setreg('/', save_last_search)
+  endtry
 endfunction
 
 function! sweep_trail#auto_sweep()
-  if g:sweep_trail#enable
+  if g:sweep_trail_enable && &modifiable
     call sweep_trail#sweep()
   endif
 endfunction

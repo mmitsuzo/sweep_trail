@@ -19,12 +19,11 @@ unlet s:save_cpo
 
 command! -bar SweepTrail call sweep_trail#sweep()
 nnoremap <silent> <Plug>(sweep_trail) :<C-u>SweepTrail<CR>
-"nnoremap <leader>sw <Plug>(sweep_tail)
 
-if !hasmapto('<Plug>(sweep_trail)')
-      \ && (!exists('g:sweep_trail_no_default_key_mappings')
-      \     || !g:sweep_trail_no_default_key_mappings)
-  silent! map <unique> <Leader>sw <Plug>(sweep_trail)
+if !exists('g:sweep_trail_no_default_key_mappings')
+      \ && maparg('<Leader>sw', 'n') == ''
+      \ && !hasmapto('<Plug>(sweep_trail)')
+  nnoremap <unique> <Leader>sw <Plug>(sweep_trail)
 endif
 
 if !exists('g:sweep_trail_enable')

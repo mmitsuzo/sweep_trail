@@ -1,4 +1,4 @@
-*sweep_trail.txt*            delete spaces at the end of line.
+*sweep_trail.txt*            Delete spaces at the end of line.
 
 Version: 1.0
 Author: thinca-san
@@ -18,9 +18,9 @@ Change-Log                   |sweep_trail-change-log|
 ==============================================================================
 Introduction                 *sweep_trail-introduction*
 
-*swwp_trail.vim* is the plugin that deletes spaces at the end of line.
+*sweep_trail.vim* is the plugin that deletes spaces at the end of line.
 Once this plugin was installed, spaces at the end of line are automatically
-removed, if |g:sweep_trail#enable| is enabled (set to non-zero value). It can 
+removed, if |g:sweep_trail_enable| is enabled (set to non-zero value). It can 
 also be done by executing |:SweepTrail| command manually.
 
 Requirements:
@@ -38,7 +38,7 @@ Commands                     *sweep_trail-commands*
 :SweepTrail                  *:SweepTrail*
                              Delete all spaces at the end of line in the
                              buffer by calling the function 
-			     |sweep_trail#sweep()|.
+                             |sweep_trail#sweep()|.
 
 ------------------------------------------------------------------------------
 Functions                    *sweep_trail-functions*
@@ -52,9 +52,11 @@ Key-Mappings                 *sweep_trail-key-mappings*
 <Plug>(sweep_trail)          *<Plug>(sweep_trail)*
                              Execute |:SweepTrail|.
 
-                             *g:sweep_trail_no_default_mappings*
-The following key mappings are not defined if it has been already defined or
-g:sweep_trail_no_default_key_mappings is set to 1.
+                             *g:sweep_trail_no_default_key_mappings*
+By default, this plugin maps `<Leader>sw` to `<Plug>(sweep_trail)`. This 
+default mapping will not be created if `<Leader>sw` is already mapped to 
+something else. To explicitly prevent the default mapping, set 
+`g:sweep_trail_no_default_key_mappings` to 1 in your vimrc.
 
 {lhs}                        {rhs}
 ----------                   -------------------
@@ -63,7 +65,7 @@ g:sweep_trail_no_default_key_mappings is set to 1.
 ==============================================================================
 Customizing                  *sweep_trail-customizing*
 
-g:sweep_trail#enable         *g:sweep_trail#enable*
+g:sweep_trail_enable         *g:sweep_trail_enable*
 If this value is non-zero value, |:SweepTrail| is automatically executed just 
 before the file was saved. The default value is 1.
 
